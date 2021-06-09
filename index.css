@@ -218,20 +218,30 @@ html {
     .container{
     background-image: url('background-img-mobile.jpg');
     background-size: cover;
+    background-attachment: scroll;
+    }
+    .lower_link{
+      display: none;
     }
     .text_box h1{
       font-size: 1.15rem;
     }
     .empty_space{
       background-image: url('background-img-2-mobile.jpg');
+      background-size: contain;
+      background-attachment: scroll;
+      bottom:-23rem
     }
     .empty_space h1{
-      color: green;
-      display: block;
-      /* top: 10rem; */
+      color: hsl(0, 0%, 15%);
+      display: block; 
       z-index: 99;
     }
     .final_space{
       display:block;
+      position: relative;
+      bottom:26rem;
+      height:100vh;
     }
+    
   } 
