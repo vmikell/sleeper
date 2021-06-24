@@ -1,3 +1,13 @@
+:root {
+  --main-nav-clr: hsl(0, 0%, 15%);
+  --lower-nav-clr: rgba(46, 46, 46, 0.8);
+  --txt-box-clr: rgba(46, 46, 46, 0.7);
+  --accent-clr: blue;
+  --main-txt-clr: hsl(0, 0%, 54%);
+  --secondary-txt-clr: hsl(0, 0%, 59%);
+  --dark-txt-clr: hsl(0, 0%, 15%);
+}
+
 *,
 *::before,
 *::after {
@@ -15,7 +25,7 @@ html {
   left: 0;
   height: 150vh;
   width: 100vw;
-  background-image: url('background-img.jpg');
+  background-image: url('./imgs/background-img.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -28,22 +38,24 @@ html {
   position: fixed;
   right: 0;
   left: 0;
-  background-color: hsl(0, 0%, 15%);
+  background-color: var(--main-nav-clr);
   width: 100vw;
   height: 3.75rem;
   margin-top: -10px;
   grid-template-columns: min-content auto min-content;
   grid-template-areas: 'navbar . contact';
 
-  z-index: 2;
+  z-index: 99;
 }
 .logo {
   position: relative;
-  color: hsl(0, 0%, 54%);
   left: 1rem;
 }
-.logo:hover {
-  color: blue;
+.logo a {
+  color: var(--main-txt-clr);
+}
+.logo a:hover {
+  color: var(--accent-clr);
 }
 .main_links {
   display: grid;
@@ -58,18 +70,18 @@ html {
   color: black;
 }
 .link:hover {
-  color: blue;
+  color: var(--accent-clr);
   transform: scale(2);
 }
 
 .btn {
-  color: blue;
-  border: 1px solid blue;
+  color: var(--accent-clr);
+  border: 1px solid var(--accent-clr);
   padding: 0.5rem;
 }
 .btn:hover {
-  color: hsl(0, 0%, 15%);
-  background-color: blue;
+  color: var(--dark-txt-clr);
+  background-color: var(--accent-clr);
 }
 .lower_nav {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
@@ -78,8 +90,8 @@ html {
   position: fixed;
   right: 0;
   left: 0;
-  background-color: rgba(46, 46, 46, 0.8);
-  color: hsl(0, 0%, 54%);
+  background-color: var(--lower-nav-clr);
+  color: var(--secondary-txt-clr);
   width: 100vw;
   height: 3.5rem;
   padding-bottom: 0;
@@ -87,7 +99,7 @@ html {
   grid-template-columns: min-content auto min-content;
   grid-template-areas: 'navbar . contact';
 
-  z-index: 1;
+  z-index: 89;
 }
 
 .lower_links {
@@ -101,11 +113,11 @@ html {
 .lower_link {
   position: relative;
   bottom: -1rem;
-  color: hsl(0, 0%, 54%);
+  color: var(--main-txt-clr);
   justify-items: center;
 }
 .lower_link a {
-  color: hsl(0, 0%, 59%);
+  color: var(--main-txt-clr);
 }
 
 .text_box {
@@ -114,8 +126,8 @@ html {
 
   position: absolute;
   bottom: 0;
-  background-color: rgba(46, 46, 46, 0.7);
-  color: hsl(0, 0%, 59%);
+  background-color: var(--txt-box-clr);
+  color: var(--secondary-txt-clr);
   height: 500px;
   width: 100vw;
   text-align: center;
@@ -127,18 +139,18 @@ html {
 .empty_space {
   position: relative;
   bottom: 0;
-  background-image: url('background-img-2.jpg');
+  background-image: url('./imgs/background-img-2.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: hsl(0, 0%, 59%);
+  color: var(--secondary-txt-clr);
   height: 250vh;
   width: 100vw;
   z-index: -1;
 }
 .empty_space h1 {
-  color: hsl(0, 0%, 15%);
+  color: var(--dark-txt-clr);
   position: relative;
   bottom: -125rem;
   right: 2rem;
@@ -154,7 +166,7 @@ html {
 }
 .right {
   background-color: #000;
-  background-image: url('background-img-3.jpg');
+  background-image: url('./imgs/background-img-3.jpg');
   height: 100vh;
   background-attachment: fixed;
   background-size: contain;
@@ -166,10 +178,10 @@ html {
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   display: grid;
   place-items: center;
-  color: hsl(0, 0%, 59%);
+  color: var(--secondary-txt-clr);
 }
-.contact_info a{
-  color:hsl(0, 0%, 59%)
+.contact_info a {
+  color: var(--secondary-txt-clr);
 }
 .contact {
   padding-top: 20rem;
@@ -177,7 +189,7 @@ html {
 
 @media (max-width: 1290px) {
   .empty_space h1 {
-    color: hsl(0, 0%, 15%);
+    color: var(--dark-txt-clr);
     position: relative;
     bottom: -80rem;
     right: 2rem;
@@ -196,7 +208,7 @@ html {
 }
 @media (max-width: 810px) {
   .container {
-    background-image: url('background-img-mobile.jpg');
+    background-image: url('./imgs/background-img-mobile.jpg');
     background-size: cover;
   }
   .text_box h1 {
@@ -208,7 +220,7 @@ html {
 }
 @media (max-width: 520px) {
   .container {
-    background-image: url('background-img-mobile.jpg');
+    background-image: url('./imgs/background-img-mobile.jpg');
     background-size: cover;
     background-attachment: scroll;
   }
@@ -219,13 +231,13 @@ html {
     font-size: 1.15rem;
   }
   .empty_space {
-    background-image: url('background-img-2-mobile.jpg');
+    background-image: url('./imgs/background-img-2-mobile.jpg');
     background-size: contain;
     background-attachment: scroll;
     bottom: -23rem;
   }
   .empty_space h1 {
-    color: hsl(0, 0%, 15%);
+    color: var(--dark-txt-clr);
     display: block;
     z-index: 99;
   }
@@ -234,6 +246,9 @@ html {
     position: relative;
     bottom: 26rem;
     height: 100vh;
+  }
+  .sidebar_container{
+    display:none;
   }
 }
 
@@ -273,17 +288,117 @@ html {
   }
 }
 
-.design{
-  display:block;
-  margin:auto;
-  color: hsl(0, 0%, 59%);
+.design {
+  display: block;
+  margin: auto;
+  color: var(--secondary-txt-clr);
   background-color: #000000;
   text-align: center;
   padding-bottom: 1rem;
 }
-.design a{
-  color:hsl(0, 0%, 59%)
+.design a {
+  color: var(--secondary-txt-clr);
 }
-.blue_text{
-  color: blue;
+.blue_text {
+  color: var(--accent-clr);
+}
+
+/* blog specific styles start here */
+.main {
+  position: relative;
+  display: flex;
+  max-width: 650px;
+  height: 200vh;
+  margin: auto;
+}
+.background_img {
+  position: fixed;
+  background-image: url(./imgs/dog.jpg);
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  z-index: -5;
+}
+.blog_container {
+  position: relative;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  z-index: -5;
+}
+
+.blog_card_container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+}
+.blog_card {
+  position: relative;
+  top: 5rem;
+  width: 500px;
+  height: fit-content;
+  background-color: hsla(0, 0%, 54%, 0.8);
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.blog_card_img {
+  position: relative;
+  width: 80%;
+  height: 200px;
+  display: block;
+  margin: auto;
+}
+.blog_img_one {
+  background-image: url(./imgs/blog-img.jpg);
+  background-size: cover;
+}
+.blog_img_two {
+  background-image: url(./imgs/blog-img-2.jpg);
+  background-size: cover;
+}
+.blog_card_body {
+  position: relative;
+}
+.blog_card_title {
+  position: relative;
+  z-index: 2;
+}
+.blog_card_title::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-clr);
+  z-index: -1;
+}
+.sidebar_container {
+  position: relative;
+  width: 100%;
+  top: 5rem;
+  padding: 0.5rem;
+  margin-left: 10px;
+  background-color: hsla(0, 0%, 54%, 0.8);
+  border-radius: 5px;
+}
+.archive_links a {
+  color: var(--accent-clr);
+}
+.blog_contact_btn {
+  color: var(--main-txt-clr);
+  padding: 0.5rem 1rem;
+  background-color: var(--accent-clr);
+  border-radius: 15px;
+  display: block;
+  margin: auto;
+  text-align: center;
 }
